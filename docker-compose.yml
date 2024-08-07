@@ -1,0 +1,16 @@
+version: "2.3"
+services:
+  salicon:
+    runtime: nvidia
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: salicon:latest
+    volumes:
+      - ${DATA_DIR}:/home/data
+      - ${HOST_WORKDIR}:/home/salicon
+    working_dir: /home/salicon
+    entrypoint: "/bin/bash"
+    ipc: host

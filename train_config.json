@@ -1,0 +1,13 @@
+{
+  "lr": 0.01,
+  "momentum": 0.9,
+  "weight_decay": 0.0005,
+  "num_epochs": 10,
+  "batch_size": 32,
+  "model":
+  {
+    "output_upsample_ratio": 16,
+    "vgg_level": 0,
+    "output_mode": 1
+  }
+}
