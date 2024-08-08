@@ -24,3 +24,6 @@ python train.py --config_file train_config.json --data_path /home/data/SALICON -
 ```
 python evaluate.py --config_file train_config.json --data_path /home/data/SALICON --weight_file ./output/salicon_model.pth --output_path ./evaluate_output
 ```
+
+### Licence
+Released under the MIT license.
