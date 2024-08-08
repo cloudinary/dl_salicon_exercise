@@ -1,7 +1,7 @@
 ## SALICON saliency prediction
 
 ### Get the data
-[TBD]
+from the provided S3 link
 
 ### Download the code
 git clone https://github.com/cloudinary/dl_salicon_exercise.git
