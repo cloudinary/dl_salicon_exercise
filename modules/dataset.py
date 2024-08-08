@@ -9,6 +9,16 @@ from torch.utils.data import Dataset
 
 class SaliconDataset(Dataset):
     def __init__(self, input_path, folders=['train'], resize_ratio=1, base_size=[480, 640]):
+        """
+        This class matches between SALICON image files and its appropriate heatmap file and process them for training.
+        The files are loaded into memory, then normalized and scaled so it could be used as a valid input to the model.
+        Args:
+            input_path: SALICON directory path
+            folders: a list of sub directories to load. might contain 'train' and/or 'valid'
+            resize_ratio: the downscaling ratio to use for all images/heatmaps. e.g: 0.5 will downscale the images by
+                half
+            base_size: the base size to use for all SALICON images (by default all the images are 480x640)
+        """
         self.folders = folders
         self.resize_ratio = resize_ratio
         self.base_size = base_size

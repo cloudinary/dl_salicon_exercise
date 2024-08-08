@@ -107,8 +107,6 @@ def embed_image(img, heatmap, heatmap_weight=0.7, norm_heatmap=False):
 
 
 def plot_img(img, mask=None, mask_weight=0.7, title="", norm_heatmap=False, figsize=None, norm=True):
-
-
     if isinstance(img, Image.Image):
         img = np.array(img)
 

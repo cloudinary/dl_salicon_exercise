@@ -136,8 +136,15 @@ class DeepGazeVGG(nn.Module):
         self.center_bias = Variable(bias_tensor, requires_grad=False)
 
     def forward(self, x):
+        """
+        runs the model on input X
+        """
+
+        #1. getting the features from the VGG sub-model
         output_features = self.vgg_encoder(x)
 
+
+        #2. passing the feature through the "readout network"
         x = torch.cat(output_features, 1)
         x = self.inst_norm(x)
 
@@ -146,6 +153,7 @@ class DeepGazeVGG(nn.Module):
         x = self.PReLU3(self.readout_conv3(x))
         x = self.PReLU4(self.readout_conv4(x))
 
+        #resizing and blurring the output (see the paper for details)
         if self.output_resize is not None:
             x = self.output_resize(x)
 
