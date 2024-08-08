@@ -19,7 +19,7 @@ docker compose -f docker-compose.yml run salicon
 python train.py --config_file train_config.json --data_path /home/data/SALICON --output_path ./output
 ```
 
-### evaluate crops
+### Evaluate crops
 
 ```
 python evaluate.py --config_file train_config.json --data_path /home/data/SALICON --weight_file ./output/salicon_model.pth --output_path ./evaluate_output
